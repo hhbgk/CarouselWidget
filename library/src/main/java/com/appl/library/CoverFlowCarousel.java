@@ -41,22 +41,22 @@ public class CoverFlowCarousel extends Carousel {
     /**
      * By enlarging this value, you can enlarge spacing in center of widget done by position adjustment
      */
-    private float mAdjustPositionMultiplier = 0.8f;
+    private float mAdjustPositionMultiplier = 0.4f;//0.8f;
 
     /**
      * Absolute value of rotation angle of cover at edge of widget in degrees
      */
-    private float mMaxRotationAngle = 70.0f;
+    private float mMaxRotationAngle = 90.0f;//70.0f;
 
     /**
      * Scale factor of item in center
      */
-    private float mMaxScaleFactor = 1.2f;
+    private float mMaxScaleFactor = 1.0f;//1.2f;
 
     /**
      * Radius of circle path which covers follow. Range of screen is -1 to 1, minimal radius is therefore 1
      */
-    private float mRadius = 2f;
+    private float mRadius = 1.0f;//2f;
 
     /**
      * Size multiplier used to simulate perspective
@@ -66,7 +66,7 @@ public class CoverFlowCarousel extends Carousel {
     /**
      * Size of reflection as a fraction of original image (0-1)
      */
-    private float mReflectionHeight = 0.5f;
+    private float mReflectionHeight = 0.1f;//0.5f;
 
     /**
      * Starting opacity of reflection. Reflection fades from this value to transparency;
@@ -239,7 +239,7 @@ public class CoverFlowCarousel extends Carousel {
      */
     protected View addAndMeasureChild(final View child, final int layoutMode) {
         if (child.getLayoutParams() == null) child.setLayoutParams(new LayoutParams(mChildWidth,
-            mChildHeight));
+                mChildHeight));
 
         final int index = layoutMode == LAYOUT_MODE_TO_BEFORE ? 0 : -1;
         addViewInLayout(child, index, child.getLayoutParams(), true);
