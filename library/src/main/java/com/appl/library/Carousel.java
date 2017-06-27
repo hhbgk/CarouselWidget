@@ -1,15 +1,18 @@
 package com.appl.library;
 
-import java.lang.ref.WeakReference;
-import java.util.LinkedList;
-
 import android.content.Context;
 import android.database.DataSetObserver;
-import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.view.*;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.Scroller;
+
+import java.lang.ref.WeakReference;
+import java.util.LinkedList;
 
 /**
  * @author Martin Appl (appl.m@seznam.cz)
@@ -82,7 +85,7 @@ public class Carousel extends ViewGroup {
      */
     private int mSlowDownCoefficient = 1;
 
-    protected int mChildWidth = 240;
+    protected int mChildWidth = 480;//240;
     protected int mChildHeight = 360;
 
     private int mSelection;

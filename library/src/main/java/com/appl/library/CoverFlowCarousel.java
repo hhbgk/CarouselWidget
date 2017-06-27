@@ -1,12 +1,20 @@
 package com.appl.library;
 
 import android.content.Context;
-import android.graphics.*;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PaintFlagsDrawFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
 /**
@@ -17,7 +25,7 @@ public class CoverFlowCarousel extends Carousel {
     /**
      * Widget size on which was tuning of parameters done. This value is used to scale parameters on when widgets has different size
      */
-    private int mTuningWidgetSize = 1280;
+    private int mTuningWidgetSize = 720;//1280;
 
     /**
      * Distance from center as fraction of half of widget size where covers start to rotate into center
@@ -46,12 +54,12 @@ public class CoverFlowCarousel extends Carousel {
     /**
      * Absolute value of rotation angle of cover at edge of widget in degrees
      */
-    private float mMaxRotationAngle = 90.0f;//70.0f;
+    private float mMaxRotationAngle = 10.0f;//70.0f;
 
     /**
      * Scale factor of item in center
      */
-    private float mMaxScaleFactor = 1.0f;//1.2f;
+    private float mMaxScaleFactor = 1.2f;
 
     /**
      * Radius of circle path which covers follow. Range of screen is -1 to 1, minimal radius is therefore 1
